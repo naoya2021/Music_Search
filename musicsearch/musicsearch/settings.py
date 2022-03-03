@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'musicsearch.wsgi.application'
+WSGI_APPLICATION = 'musicsearch.wsgi'
 
 
 # Database
