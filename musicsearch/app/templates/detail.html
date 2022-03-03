@@ -1,0 +1,29 @@
+{% extends 'app/templates/base.html' %}
+{% load static %}
+{% block content %}
+    
+        <div class="row">
+            {% for detail in detail_data %}
+            <div class="col-md-6 text-center">
+                <img src="{{detail.image}}" alt="" class="img-fluid">
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body px-2 py-1">
+                        <div class="p-4">
+                            <h3>{{ detail.title }}</h3>
+                            <p class="mb-3">{{ detail.artist_name }}</p>
+                            
+                        </div>
+                        <!-- <div class="p-4">
+                            <h3>{{ detail.release }}</h3>
+                            <p class="mb-3">{{ detail.artist_name }}</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+{% endblock %}

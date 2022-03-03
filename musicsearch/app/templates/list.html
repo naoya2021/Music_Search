@@ -1,0 +1,29 @@
+{% extends 'app/templates/base.html' %}
+
+{% block content %}
+
+<div class="text-center my-5">
+    <div class="mb-5">
+        <h3>「{{ keyword }}」の検索結果</h3>
+    </div>
+    <div class="row">
+        {% for data in list_data %}
+        <div class="col-3 mb-3">
+            <div class="card img-thumbnail list h-100">
+                <img src={{data.image}} alt="" class="card-img-top card-thum">
+                <div class="card-body text-cemter px-2 py-3">
+                    <h5 class="font-weigh-bold">{{ data.title }}</h5>
+                    <h6>popularity{{ data.popularity }}</h6>
+                    <h6>{{ data.artist_name }}</h6>
+                    
+                </div>
+                <a href="{% url 'app:detail' data.id %}" class="stretched-link"></a>
+            </div>
+        </div>
+        {% empty %}
+            <p>該当するものはありません。</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

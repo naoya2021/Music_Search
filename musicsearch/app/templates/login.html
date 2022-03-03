@@ -1,0 +1,39 @@
+{% extends 'app/templates/base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>名前とパスワードが一致しません。正しく入力してください。</p>
+{% endif %}
+
+{% if next %}
+{% if user.is_authenticated %}
+  <p>アクセスしようとしたページを表示する権限がありません。 表示するためには、
+    アクセス権限のあるアカウントでログインしてください。</p>
+{% else %}
+  <p>このページを見るためにはログインしてください。</p>
+{% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'app:login' %}">
+{% csrf_token %}
+<table>
+  <tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+  </tr>
+  <tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+  </tr>
+</table>
+
+<input type="submit" value="ログイン">
+<input type="hidden" name="next" value="{{ next }}">
+</form>
+
+<p><a href="{% url 'app:signup' %}">新規登録</a></p>
+
+
+
+{% endblock %}

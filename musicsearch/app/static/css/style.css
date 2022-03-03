@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #F1F1F1;
+    display: flex;
+    flex-flow: column;
+    min-height: 100%;
+
+}
+
+
+
+main{
+    flex: 1;
+   
+}
+.row{
+    padding-top: 50px;
+    
+}
+img{
+    height: 200px;
+    object-fit: contain;
+}
