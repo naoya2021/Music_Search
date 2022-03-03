@@ -30,7 +30,7 @@ SECRET_KEY = 'gd!hqvl+jlu$nszyd8s_(uivwa)h8v(_6wsxr_mb9sv2($npbi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://musicsearch0303.herokuapp.com']
 
 
 # Application definition
@@ -87,6 +87,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
