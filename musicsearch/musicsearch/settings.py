@@ -24,8 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gd!hqvl+jlu$nszyd8s_(uivwa)h8v(_6wsxr_mb9sv2($npbi'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -43,7 +42,8 @@ if not DEBUG:
 
 ALLOWED_HOSTS = ['musicsearch0303.herokuapp.com']
 
-
+if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
 # Application definition
 
 INSTALLED_APPS = [
