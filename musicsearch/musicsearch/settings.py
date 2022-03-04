@@ -30,7 +30,7 @@ SECRET_KEY = 'gd!hqvl+jlu$nszyd8s_(uivwa)h8v(_6wsxr_mb9sv2($npbi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['musicsearch0303.herokuapp.com']
 
 
 # Application definition
