@@ -40,7 +40,8 @@ if not DEBUG:
     django_heroku.settings(locals())
 
 
-ALLOWED_HOSTS = ['musicsearch0303.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+# musicsearch0303.herokuapp.com
 
 if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']

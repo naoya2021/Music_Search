@@ -15,7 +15,7 @@ urlpatterns=[
     path('',views.IndexView.as_view(),name='index'),
     # path('home/',views.IndexView.as_view(),name='index'),
     path('detail/<str:id>',views.DetailView.as_view(),name='detail'),
-    path("", auth_views.LoginView.as_view(template_name="app/templates/login.html"), name="login"),
+    # path("", auth_views.LoginView.as_view(template_name="app/templates/login.html"), name="login"),
     path("login/", auth_views.LoginView.as_view(template_name="app/templates/login.html"), name="login"),
     path("logout/", auth_views.LogoutView.as_view(template_name="app/templates/logout.html"), name="logout"),
     path('signup/', views.signup,name = 'signup'),
