@@ -15,7 +15,7 @@ from decouple import config
 from dj_database_url import parse as aburl
 import dj_database_url
 from telnetlib import LOGOUT
-import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gd!hqvl+jlu$nszyd8s_(uivwa)h8v(_6wsxr_mb9sv2($npbi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+
+try:
+    from musicsearch.local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
+
 
 ALLOWED_HOSTS = ['musicsearch0303.herokuapp.com']
 
@@ -148,5 +159,3 @@ LOGOUT_REDIRECT_URL = 'app:login'
 LOGOUT_REDIRECT_URL='/login'
 LOGOUT_URL = 'app:logout'
 
-#Heroku
-django_heroku.settings(locals())
