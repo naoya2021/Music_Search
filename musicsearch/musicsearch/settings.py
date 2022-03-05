@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from decouple import config
-from dj_database_url import parse as aburl
+# from decouple import config
+# from dj_database_url import parse as aburl
 import dj_database_url
 from telnetlib import LOGOUT
 
@@ -87,6 +87,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'musicsearch.wsgi.application'
+
+
+
 
 
 # Database

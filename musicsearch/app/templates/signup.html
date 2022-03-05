@@ -4,7 +4,7 @@
 
 
 {# signup処理部分 #}
-<form method="post" action="{% url 'app:index' %}">
+<form method="POST" action="{% url 'app:signup' %}">
 {% csrf_token %}
 <table>
 <tr>
@@ -25,7 +25,7 @@
 </tr>
 </table>
 
-<input type="submit" value="login" />
+<input type="submit" value="ログイン"">
 
 {# エラーメッセージを表示 #}
 {% if form.errors %}
