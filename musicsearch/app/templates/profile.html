@@ -5,6 +5,5 @@
 {% block content %}
   <p>プロファイル</p>
   <p>hello {{ request.user.username }}</p>
-  <a href="{% url 'password_change' %}">パスワード変更</a>
-  <a href="{% url 'logout' %}">ログアウト</a>
+
 {% endblock %}

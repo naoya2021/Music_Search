@@ -19,7 +19,7 @@
          
             {% if user.is_authenticated %}
             <li>
-                <a class="nav-link">
+                <a href = "{% url 'app:profile' %}"" class="nav-link">
                     ユーザ名：{{ user.get_username }}
                 </a>
             </li>    

@@ -104,7 +104,7 @@ class DetailView(View):
                 # 'release':release
             }
         detail_data.append(query)
-        print(detail_data)
+        # print(detail_data)
 
         return render(request,'app/templates/detail.html',{
             'detail_data':detail_data
@@ -114,11 +114,14 @@ class DetailView(View):
 #サインアップ
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
+        forms = UserCreationForm(request.POST)
+        if forms.is_valid():
+            user = forms.save()
             login(request, user)
-            render(request,'app/templates/index.html')
+            return render(request,'app/templates/profile.html')
     else:
-        form = UserCreationForm()
-    return render(request, 'app/templates/signup.html', {'form': form})
+        forms = UserCreationForm()
+    return render(request, 'app/templates/signup.html', {'forms': forms})
+
+def profile(request):
+    return render(request,'app/templates/profile.html')
