@@ -18,3 +18,4 @@
 ・Heroku
 ・GitHub
 ・Gunicorn
+・SpotifyAPI
